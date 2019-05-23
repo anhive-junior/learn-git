@@ -1,0 +1,29 @@
+#!/bin/bash
+
+echo ""
+echo "###################################"
+echo "# Validate - Apache 2"
+echo "###################################"
+
+APACHE_DIR="/etc/apache2"
+APACHE_VERSION_PREDICT="Apache/2.4"
+APACHE_VERSION=$(apache2 -v)
+
+if [ ! $? == "0" ]; then
+  echo 'Cannot execute Apache, please check again your installation.'
+  exit 1
+fi
+
+if [[ ! $APACHE_VERSION == *"$APACHE_VERSION_PREDICT"* ]]; then
+  echo "Unsupported version of Apache"
+  exit 1
+fi
+
+if [ ! -d "$APACHE_DIR/sites-available" ]; then
+  echo 'Cannot find Apache directory, please check again installtion.'
+  exit 1
+fi
+
+echo $"$APACHE_VERSION"
+
+# END OF FILE

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+echo ""
+echo "###################################"
+echo "# Install dependencies "
+echo "###################################"
+
+echo ""
+echo "Update and upgrading packages..."
+echo ""
+apt update && apt upgrade -yq
+
+echo ""
+echo "Install dependency packages..."
+echo ""
+apt install apache2=2.4\* php7.0 php7.0-json php7.0-curl
+
+if [[ ! $? == "0" ]]; then
+  echo "Error occurred during installation of dependency packages."
+  exit $?
+fi
+
+# END OF FILE

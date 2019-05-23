@@ -1,0 +1,31 @@
+#!/bin/bash
+
+echo ""
+echo "###################################"
+echo "# Validate - PHP"
+echo "###################################"
+
+PHP_VERSION_PREDICT="PHP 7.0"
+PHP_VERSION=$(php -v)
+PHP_MODULES=$(php -m)
+
+if [ ! $? == "0" ]; then
+  echo 'Cannot execute PHP, please check again your installation.'
+  exit 1
+fi
+
+if [[ ! $PHP_VERSION == *"$PHP_VERSION_PREDICT"* ]]; then
+  echo "Unsupported version of PHP"
+  exit 1
+fi
+
+for moduleName in json curl; do
+  if [[ ! $PHP_MODULES == *"$moduleName"* ]]; then
+    echo "Missing PHP module: $moduleName"
+    exit 1
+  fi
+done
+
+echo $"$PHP_VERSION"
+
+# END OF FILE
