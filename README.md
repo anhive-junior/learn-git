@@ -7,3 +7,8 @@
 1.3. [Readme.md 배찌 다는 법](https://github.com/badges/shields)
 
 출처 : https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+
+
+2. .gitignore 사용하는 방법
+
+1.1. [블로그 참조](https://asdf2017.blog.me/221560589200)
