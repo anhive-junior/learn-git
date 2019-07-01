@@ -11,7 +11,7 @@
 
 2. .gitignore 사용하는 방법
 
-1.1. [블로그 참조](https://asdf2017.blog.me/221560589200)
+2.1. [블로그 참조](https://asdf2017.blog.me/221560589200)
 
 3. github 배우는 사이트
 
